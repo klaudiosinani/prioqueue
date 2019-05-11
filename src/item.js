@@ -6,6 +6,10 @@ class Item {
     this._value = value;
   }
 
+  get priority() {
+    return this._priority;
+  }
+
   get value() {
     return this._value;
   }
