@@ -26,8 +26,23 @@ Visit the [contributing guidelines](https://github.com/klaussinani/prioqueue/blo
 ## Contents
 
 - [Description](#description)
+- [Install](#install)
 - [Team](#team)
 - [License](#license)
+
+## Install
+
+### Yarn
+
+```bash
+yarn add prioqueue
+```
+
+### NPM
+
+```bash
+npm install prioqueue
+```
 
 ## Team
 
