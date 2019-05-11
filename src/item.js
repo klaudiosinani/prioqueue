@@ -17,6 +17,10 @@ class Item {
   set value(value) {
     this._value = value;
   }
+
+  toPair() {
+    return [this.priority, this.value];
+  }
 }
 
 module.exports = Item;
