@@ -13,6 +13,11 @@
     "node": ">=6"
   },
   "types": "types/prioqueue.d.ts",
+  "files": [
+    "src",
+    "types",
+    "index.js"
+  ],
   "keywords": [
     "priority",
     "queue",
