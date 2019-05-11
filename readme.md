@@ -27,6 +27,7 @@ Visit the [contributing guidelines](https://github.com/klaussinani/prioqueue/blo
 
 - [Description](#description)
 - [Install](#install)
+- [Development](#development)
 - [Team](#team)
 - [License](#license)
 
@@ -43,6 +44,15 @@ yarn add prioqueue
 ```bash
 npm install prioqueue
 ```
+
+## Development
+
+For more info on how to contribute to the project, please read the [contributing guidelines](https://github.com/klaussinani/prioqueue/blob/master/contributing.md).
+
+- Fork the repository and clone it to your machine
+- Navigate to your local fork: `cd prioqueue`
+- Install the project dependencies: `npm install` or `yarn install`
+- Lint the code and run the tests: `npm test` or `yarn test`
 
 ## Team
 
