@@ -5,6 +5,14 @@ class Item {
     this._priority = priority;
     this._value = value;
   }
+
+  get value() {
+    return this._value;
+  }
+
+  set value(value) {
+    this._value = value;
+  }
 }
 
 module.exports = Item;
