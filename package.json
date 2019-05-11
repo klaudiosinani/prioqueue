@@ -1,0 +1,23 @@
+{
+  "name": "prioqueue",
+  "version": "0.0.0",
+  "description": "⚡ Priority queues for ES6",
+  "license": "MIT",
+  "repository": "klaussinani/prioqueue",
+  "author": {
+    "name": "Klaus Sinani",
+    "email": "klaussinani@gmail.com",
+    "url": "https://klaussinani.github.io"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "keywords": [
+    "priority",
+    "queue",
+    "es6",
+    "data",
+    "structure",
+    "typescript"
+  ]
+}
