@@ -19,5 +19,8 @@
     "data",
     "structure",
     "typescript"
-  ]
+  ],
+  "devDependencies": {
+    "xo": "^0.24.0"
+  }
 }
