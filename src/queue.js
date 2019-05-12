@@ -26,6 +26,16 @@ class Queue {
     return this;
   }
 
+  includes(value) {
+    for (const item of this._queue) {
+      if (item.value === value) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
   isEmpty() {
     return this._queue.length === 0;
   }

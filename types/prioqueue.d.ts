@@ -21,6 +21,7 @@ declare namespace queue {
     readonly size: number;
     clear(): this;
     forEach(fn: (x: Item<T>) => void): this;
+    includes(value: T): boolean;
     isEmpty(): boolean;
     peek(): Item<T> | undefined;
     priorities(): number[];
