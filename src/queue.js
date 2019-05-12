@@ -34,6 +34,12 @@ class Queue {
     return this._queue[0];
   }
 
+  priorities() {
+    const priorities = [];
+    this.forEach(item => priorities.push(item.priority));
+    return priorities;
+  }
+
   toPairs() {
     const pairs = [];
     this.forEach(item => pairs.push(item.toPair()));

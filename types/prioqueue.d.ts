@@ -23,6 +23,7 @@ declare namespace queue {
     forEach(fn: (x: Item<T>) => void): this;
     isEmpty(): boolean;
     peek(): Item<T> | undefined;
+    priorities(): number[];
     toPairs(): Array<[number, T]>;
     values(): T[];
   }
