@@ -44,6 +44,14 @@ class Queue {
     return this._queue[0];
   }
 
+  peekPriority() {
+    if (this._queue[0]) {
+      return this._queue[0].priority;
+    }
+
+    return undefined;
+  }
+
   priorities() {
     const priorities = [];
     this.forEach(item => priorities.push(item.priority));
