@@ -30,6 +30,10 @@ class Queue {
     return this._queue.length === 0;
   }
 
+  peek() {
+    return this._queue[0];
+  }
+
   toPairs() {
     const pairs = [];
     this.forEach(item => pairs.push(item.toPair()));
