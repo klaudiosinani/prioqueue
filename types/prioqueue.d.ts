@@ -11,6 +11,8 @@ declare namespace item {
 }
 
 declare namespace queue {
+  interface Item<T> extends item.Instance<T> {}
+
   export interface Constructor {
     new <T = any>(): Instance<T>;
   }
@@ -24,7 +26,7 @@ declare namespace queue {
 
 declare namespace prioqueue {
   export interface Item<T = any> extends item.Instance<T> {}
-  export interface Queue<T = any> extends queue.Instance<T> { }
+  export interface Queue<T = any> extends queue.Instance<T> {}
 }
 
 declare const prioqueue: {
