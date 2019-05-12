@@ -8,6 +8,10 @@ class Queue {
   get size() {
     return this._queue.length;
   }
+
+  isEmpty() {
+    return this._queue.length === 0;
+  }
 }
 
 module.exports = Queue;
