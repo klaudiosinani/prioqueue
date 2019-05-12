@@ -39,6 +39,12 @@ class Queue {
     this.forEach(item => pairs.push(item.toPair()));
     return pairs;
   }
+
+  values() {
+    const values = [];
+    this.forEach(item => values.push(item.value));
+    return values;
+  }
 }
 
 module.exports = Queue;
