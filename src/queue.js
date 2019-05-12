@@ -9,6 +9,10 @@ class Queue {
     return this._queue.length;
   }
 
+  _swap(i, j) {
+    [this._queue[i], this._queue[j]] = [this._queue[j], this._queue[i]];
+  }
+
   clear() {
     this._queue = [];
     return this;
