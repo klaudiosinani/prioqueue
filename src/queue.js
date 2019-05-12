@@ -14,6 +14,14 @@ class Queue {
     return this;
   }
 
+  forEach(fn) {
+    for (const item of this._queue) {
+      fn(item);
+    }
+
+    return this;
+  }
+
   isEmpty() {
     return this._queue.length === 0;
   }

@@ -20,6 +20,7 @@ declare namespace queue {
   export interface Instance<T> {
     readonly size: number;
     clear(): this;
+    forEach(fn: (x: Item<T>) => void): this;
     isEmpty(): boolean;
   }
 }
