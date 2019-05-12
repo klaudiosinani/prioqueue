@@ -24,6 +24,7 @@ declare namespace queue {
     isEmpty(): boolean;
     peek(): Item<T> | undefined;
     priorities(): number[];
+    toArray(): Item<T>[];
     toPairs(): Array<[number, T]>;
     values(): T[];
   }

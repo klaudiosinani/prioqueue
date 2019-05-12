@@ -40,6 +40,12 @@ class Queue {
     return priorities;
   }
 
+  toArray() {
+    const array = [];
+    this.forEach(item => array.push(item));
+    return array;
+  }
+
   toPairs() {
     const pairs = [];
     this.forEach(item => pairs.push(item.toPair()));
