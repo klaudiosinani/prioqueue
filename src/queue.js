@@ -25,6 +25,12 @@ class Queue {
   isEmpty() {
     return this._queue.length === 0;
   }
+
+  toPairs() {
+    const pairs = [];
+    this.forEach(item => pairs.push(item.toPair()));
+    return pairs;
+  }
 }
 
 module.exports = Queue;

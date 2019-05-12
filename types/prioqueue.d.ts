@@ -22,6 +22,7 @@ declare namespace queue {
     clear(): this;
     forEach(fn: (x: Item<T>) => void): this;
     isEmpty(): boolean;
+    toPairs(): Array<[number, T]>;
   }
 }
 
