@@ -9,6 +9,11 @@ class Queue {
     return this._queue.length;
   }
 
+  clear() {
+    this._queue = [];
+    return this;
+  }
+
   isEmpty() {
     return this._queue.length === 0;
   }

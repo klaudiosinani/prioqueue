@@ -17,6 +17,7 @@ declare namespace queue {
 
   export interface Instance<T> {
     readonly size: number;
+    clear(): this;
     isEmpty(): boolean;
   }
 }
