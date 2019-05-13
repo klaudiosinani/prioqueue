@@ -13,6 +13,10 @@ class Queue {
     return (2 * i) + 1;
   }
 
+  _rightIndex(i) {
+    return (2 * i) + 2;
+  }
+
   _swap(i, j) {
     [this._queue[i], this._queue[j]] = [this._queue[j], this._queue[i]];
   }
