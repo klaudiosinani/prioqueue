@@ -9,6 +9,22 @@ class Queue {
     return this._queue.length;
   }
 
+  _childIndices(i) {
+    const indices = [];
+    const left = this._leftIndex(i);
+    const right = this._rightIndex(i);
+
+    if (left < this.size) {
+      indices.push(left);
+
+      if (right < this.size) {
+        indices.push(right);
+      }
+    }
+
+    return indices;
+  }
+
   _leftIndex(i) {
     return (2 * i) + 1;
   }
