@@ -29,6 +29,18 @@ class Queue {
     return this._childIndices(i).map(x => this._queue[x]);
   }
 
+  _defaultComparator(x, y) {
+    if (x > y) {
+      return 1;
+    }
+
+    if (x < y) {
+      return -1;
+    }
+
+    return 0;
+  }
+
   _leftIndex(i) {
     return (2 * i) + 1;
   }
