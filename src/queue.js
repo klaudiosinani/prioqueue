@@ -1,8 +1,9 @@
 'use strict';
 
 class Queue {
-  constructor() {
+  constructor(comparatorFn) {
     this._queue = [];
+    this._comparatorFn = comparatorFn || this._defaultComparatorFn;
   }
 
   get size() {
