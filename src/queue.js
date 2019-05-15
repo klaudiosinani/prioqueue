@@ -50,7 +50,7 @@ class Queue {
     return (2 * i) + 1;
   }
 
-  _parentIndex(i) {
+  _getParentIndex(i) {
     return Math.floor((i - 1) / 2);
   }
 
