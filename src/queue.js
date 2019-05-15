@@ -10,7 +10,7 @@ class Queue {
     return this._queue.length;
   }
 
-  _childIndices(i) {
+  _getChildIndices(i) {
     const indices = [];
     const left = this._leftIndex(i);
     const right = this._rightIndex(i);
@@ -27,7 +27,7 @@ class Queue {
   }
 
   _children(i) {
-    return this._childIndices(i).map(x => this._queue[x]);
+    return this._getChildIndices(i).map(x => this._queue[x]);
   }
 
   _compare(i, j) {
