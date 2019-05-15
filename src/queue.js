@@ -13,7 +13,7 @@ class Queue {
   _getChildIndices(i) {
     const indices = [];
     const left = this._getLeftChildIndex(i);
-    const right = this._rightIndex(i);
+    const right = this._getRightChildIndex(i);
 
     if (left < this.size) {
       indices.push(left);
@@ -54,7 +54,7 @@ class Queue {
     return Math.floor((i - 1) / 2);
   }
 
-  _rightIndex(i) {
+  _getRightChildIndex(i) {
     return (2 * i) + 2;
   }
 
