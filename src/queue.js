@@ -12,7 +12,7 @@ class Queue {
 
   _getChildIndices(i) {
     const indices = [];
-    const left = this._leftIndex(i);
+    const left = this._getLeftChildIndex(i);
     const right = this._rightIndex(i);
 
     if (left < this.size) {
@@ -46,7 +46,7 @@ class Queue {
     return 0;
   }
 
-  _leftIndex(i) {
+  _getLeftChildIndex(i) {
     return (2 * i) + 1;
   }
 
