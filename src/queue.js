@@ -58,7 +58,7 @@ class Queue {
     return (2 * i) + 2;
   }
 
-  _swap(i, j) {
+  _swapItems(i, j) {
     [this._queue[i], this._queue[j]] = [this._queue[j], this._queue[i]];
   }
 
