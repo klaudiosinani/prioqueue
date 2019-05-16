@@ -35,11 +35,11 @@ class Queue {
   }
 
   _defaultComparatorFn(x, y) {
-    if (x > y) {
+    if (x.priority > y.priority) {
       return 1;
     }
 
-    if (x < y) {
+    if (x.priority < y.priority) {
       return -1;
     }
 
