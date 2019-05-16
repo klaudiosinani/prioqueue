@@ -11,6 +11,21 @@ class Queue {
     return this._queue.length;
   }
 
+  _bubbleUp(index = this.size - 1) {
+    let currentIndex = index;
+
+    while (currentIndex > 0) {
+      const parentIndex = this._getParentIndex(currentIndex);
+
+      if (this._compare(currentIndex, parentIndex) <= 0) {
+        break;
+      }
+
+      this._swapItems(currentIndex, parentIndex);
+      currentIndex = parentIndex;
+    }
+  }
+
   _compare(i, j) {
     return this._comparatorFn(this._queue[i], this._queue[j]);
   }
