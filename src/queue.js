@@ -1,4 +1,5 @@
 'use strict';
+const Item = require('./item');
 
 class Queue {
   constructor(comparatorFn) {
@@ -64,6 +65,26 @@ class Queue {
 
   clear() {
     this._queue = [];
+    return this;
+  }
+
+  enqueue(priority, value) {
+    const item = new Item(priority, value);
+    this._queue.push(item);
+
+    let currentIndex = this.size - 1;
+
+    while (currentIndex > 0) {
+      const parentIndex = this._getParentIndex(currentIndex);
+
+      if (this._compare(currentIndex, parentIndex) <= 0) {
+        break;
+      }
+
+      this._swapItems(currentIndex, parentIndex);
+      currentIndex = parentIndex;
+    }
+
     return this;
   }
 
