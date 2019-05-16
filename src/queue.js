@@ -73,6 +73,17 @@ class Queue {
     return -1;
   }
 
+  _isPriorityOrdered(index) {
+    const indices = this._getChildIndices(index);
+
+    for (const i in indices) {
+      if (this._compare(index, indices[i]) < 0) {
+        return false;
+      }
+    }
+
+    return true;
+  }
 
   _swapItems(i, j) {
     [this._queue[i], this._queue[j]] = [this._queue[j], this._queue[i]];
