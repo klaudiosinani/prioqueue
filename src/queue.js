@@ -11,6 +11,22 @@ class Queue {
     return this._queue.length;
   }
 
+  _compare(i, j) {
+    return this._comparatorFn(this._queue[i], this._queue[j]);
+  }
+
+  _defaultComparatorFn(x, y) {
+    if (x.priority > y.priority) {
+      return 1;
+    }
+
+    if (x.priority < y.priority) {
+      return -1;
+    }
+
+    return 0;
+  }
+
   _getChildIndices(i) {
     const indices = [];
     const left = this._getLeftChildIndex(i);
@@ -31,32 +47,8 @@ class Queue {
     return this._getChildIndices(i).map(x => this._queue[x]);
   }
 
-  _compare(i, j) {
-    return this._comparatorFn(this._queue[i], this._queue[j]);
-  }
-
-  _defaultComparatorFn(x, y) {
-    if (x.priority > y.priority) {
-      return 1;
-    }
-
-    if (x.priority < y.priority) {
-      return -1;
-    }
-
-    return 0;
-  }
-
   _getLeftChildIndex(i) {
     return (2 * i) + 1;
-  }
-
-  _getParentIndex(i) {
-    return Math.floor((i - 1) / 2);
-  }
-
-  _getRightChildIndex(i) {
-    return (2 * i) + 2;
   }
 
   _getMaxPriorityChildIndex(i) {
@@ -71,6 +63,14 @@ class Queue {
     }
 
     return -1;
+  }
+
+  _getParentIndex(i) {
+    return Math.floor((i - 1) / 2);
+  }
+
+  _getRightChildIndex(i) {
+    return (2 * i) + 2;
   }
 
   _isPriorityOrdered(index) {
