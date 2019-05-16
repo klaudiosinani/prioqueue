@@ -1,5 +1,5 @@
 <h1 align="center">
-  prioqueue
+  Prioqueue
 </h1>
 
 <h4 align="center">
