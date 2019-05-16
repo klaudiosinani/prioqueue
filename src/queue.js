@@ -94,6 +94,24 @@ class Queue {
     return this;
   }
 
+  dequeue() {
+    const front = this.peek();
+    const last = this._queue.pop();
+
+    if (!this.isEmpty()) {
+      let currentIndex = 0;
+      this._queue[0] = last;
+
+      while (!this._isPriorityOrdered(currentIndex)) {
+        const maxPriorityChildIndex = this._getMaxPriorityChildIndex(currentIndex);
+        this._swapItems(currentIndex, maxPriorityChildIndex);
+        currentIndex = maxPriorityChildIndex;
+      }
+    }
+
+    return front;
+  }
+
   enqueue(priority, value) {
     const item = new Item(priority, value);
     this._queue.push(item);
