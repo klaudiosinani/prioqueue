@@ -100,7 +100,7 @@ class Queue {
     return true;
   }
 
-  _shiftDown(index = 0) {
+  _shiftDown(index) {
     let currentIndex = index;
 
     while (!this._isPriorityOrdered(currentIndex)) {
