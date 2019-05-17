@@ -124,14 +124,8 @@ class Queue {
     const last = this._queue.pop();
 
     if (!this.isEmpty()) {
-      let currentIndex = 0;
       this._queue[0] = last;
-
-      while (!this._isPriorityOrdered(currentIndex)) {
-        const maxPriorityChildIndex = this._getMaxPriorityChildIndex(currentIndex);
-        this._swapItems(currentIndex, maxPriorityChildIndex);
-        currentIndex = maxPriorityChildIndex;
-      }
+      this._shiftDown(0);
     }
 
     return front;
