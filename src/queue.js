@@ -11,7 +11,7 @@ class Queue {
     return this._queue.length;
   }
 
-  _bubbleUp(index = this.size - 1) {
+  _bubbleUp(index) {
     let currentIndex = index;
 
     while (currentIndex > 0) {
@@ -134,7 +134,7 @@ class Queue {
   enqueue(priority, value) {
     const item = new Item(priority, value);
     this._queue.push(item);
-    this._bubbleUp();
+    this._bubbleUp(this.size - 1);
     return this;
   }
 
