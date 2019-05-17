@@ -100,6 +100,16 @@ class Queue {
     return true;
   }
 
+  _shiftDown(index = 0) {
+    let currentIndex = index;
+
+    while (!this._isPriorityOrdered(currentIndex)) {
+      const maxPriorityChildIndex = this._getMaxPriorityChildIndex(currentIndex);
+      this._swapItems(currentIndex, maxPriorityChildIndex);
+      currentIndex = maxPriorityChildIndex;
+    }
+  }
+
   _swapItems(i, j) {
     [this._queue[i], this._queue[j]] = [this._queue[j], this._queue[i]];
   }
