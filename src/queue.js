@@ -186,6 +186,16 @@ class Queue {
     return priorities;
   }
 
+  search(value) {
+    for (const item of this._queue) {
+      if (item.value === value) {
+        return item;
+      }
+    }
+
+    return undefined;
+  }
+
   toArray() {
     const array = [];
     this.forEach(item => array.push(item));

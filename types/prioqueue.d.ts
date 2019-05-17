@@ -29,6 +29,7 @@ declare namespace queue {
     peekPriority(): number | undefined;
     peekValue(): T | undefined;
     priorities(): number[];
+    search(value: T): Node<T> | undefined;
     toArray(): Item<T>[];
     toPairs(): Array<[number, T]>;
     values(): T[];
