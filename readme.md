@@ -27,6 +27,7 @@ Visit the [contributing guidelines](https://github.com/klaussinani/prioqueue/blo
 
 - [Description](#description)
 - [Install](#install)
+- [In Depth](#in-depth)
 - [Development](#development)
 - [Related](#related)
 - [Team](#team)
@@ -45,6 +46,10 @@ yarn add prioqueue
 ```bash
 npm install prioqueue
 ```
+
+## In Depth
+
+A priority queue is an abstract data type, similar to a regular queue or stack data structure, but where additionally each item has a `priority` associated with it. In a priority queue, an item with high priority is served before an item with low priority. To improve performance, Prioqueue priority queues use an array implemented binary heap as their backbone, giving `O(log n)` performance for inserts and removals.
 
 ## Development
 
