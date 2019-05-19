@@ -61,7 +61,7 @@ Accordingly, to create a **min-priority queue**, where items are inserted in the
 
 By default, if no comparator function is provided on instantiation, a **max-priority queue** instance is returned.
 
-Usage examples can be also found at the [`test`](https://github.com/klaussinani/prioqueue/master/test) directory.
+Usage examples can be also found at the [`test`](https://github.com/klaussinani/prioqueue/tree/master/test) directory.
 
 ```js
 'use strict';
