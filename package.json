@@ -1,6 +1,6 @@
 {
   "name": "prioqueue",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "⚡ Priority queues for ES6",
   "license": "MIT",
   "repository": "klaussinani/prioqueue",
