@@ -17,7 +17,7 @@
 
 ## Description
 
-ES6 implementation of the priority queue data structures with TypeScript support.
+ES6 implementation of the priority queue queue structures with TypeScript support.
 
 Come over to [Twitter](https://twitter.com/klaussinani) to share your thoughts on the project.
 
@@ -49,19 +49,91 @@ npm install prioqueue
 
 ## In Depth
 
-A priority queue is an abstract data type, similar to a regular queue or stack data structure, but where additionally each item has a `priority` associated with it. In a priority queue, an item with high priority is served before an item with low priority. To improve performance, Prioqueue priority queues use an array implemented binary heap as their backbone, giving `O(log n)` performance for inserts and removals.
+A priority queue is an abstract queue type, similar to a regular queue or stack queue structure, but where additionally each item has a `priority` associated with it. In a priority queue, an item with high priority is served before an item with low priority. To improve performance, Prioqueue priority queues use an array implemented binary heap as their backbone, giving `O(log n)` performance for enqueues and removals.
 
 ## Usage
 
 Prioqueue exposes a chainable API, that can be utilized through a simple and minimal syntax, allowing you to combine methods effectively.
 
-To create a **max-priority queue**, where items are inserted in the order in which they arrive and the item with the maximum priority value is always served first, we provide as argument to the `Queue` class, on instantiation, a binary comparator function `compareMax(x, y)`, which returns a positive number when the priority of item `x` is greater than the one of item `y`, zero when equal and a negative number when less than.
+To create a **max-priority queue**, where items are enqueueed in the order in which they arrive and the item with the maximum priority value is always served first, we provide as argument to the `Queue` class, on instantiation, a binary comparator function `compareMax(x, y)`, which returns a positive number when the priority of item `x` is greater than the one of item `y`, zero when equal and a negative number when less than.
 
-Accordingly, to create a **min-priority queue**, where items are inserted in the order in which they arrive and the item with the minimum priority value is always served first, a binary comparator function `compareMin(x, y)` must be passed as argument, which returns a positive number when the priority of item `x` is less than the one of item `y`, zero when equal and a negative number when greater than.
+Accordingly, to create a **min-priority queue**, where items are enqueueed in the order in which they arrive and the item with the minimum priority value is always served first, a binary comparator function `compareMin(x, y)` must be passed as argument, which returns a positive number when the priority of item `x` is less than the one of item `y`, zero when equal and a negative number when greater than.
 
 By default, if no comparator function is provided on instantiation, a **max-priority queue** instance is returned.
 
 Usage examples can be also found at the [`test`](https://github.com/klaussinani/prioqueue/heap/master/test) directory.
+
+```js
+'use strict';
+const {Queue, Item} = require('prioqueue');
+
+// Create a max priority queue
+const maxQueue = new Queue((x, y) => x.priority - y.priority);
+//=> Queue { queue: [] }
+
+maxQueue.enqueue(15, 'A');
+//=> Queue { queue: [Item { priority: 15, value: 'A' }] }
+
+maxQueue.peek();
+//=> Item { priority: 15, value: 'A' }
+
+const item = new Item(15, 'A');
+
+maxQueue.peek().toPair();
+//=> [15, 'A']
+
+maxQueue.peekPriority() === item.priority;
+//=> true
+
+maxQueue.peekValue() === item.value;
+//=> true
+
+maxQueue.enqueue(10, 'B').enqueue(5, 'C');
+//=> Queue { queue: [
+// Item { priority: 15, value: 'A' },
+// Item { priority: 10, value: 'B' },
+// Item { priority: 5, value: 'C' } ] }
+
+maxQueue.includes('A');
+//=> true
+
+maxQueue.includes('D');
+//=> false
+
+maxQueue.enqueue(7, 'D').enqueue(8, 'E').enqueue(2, 'F');
+//=> Queue { queue: [
+// Item { priority: 15, value: 'A' },
+// Item { priority: 10, value: 'B' },
+// Item { priority: 5, value: 'C' },}
+// Item { priority: 7, value: 'D' },
+// Item { priority: 8, value: 'E' },
+// Item { priority: 2, value: 'F' } ] }
+
+maxQueue.search('E');
+//=> Item { priority: 8, value: 'E' }
+
+maxQueue.dequeue();
+//=> Item { priority: 15, value: 'A' }
+
+maxQueue.dequeue();
+//=> Item { priority: 10, value: 'B' }
+
+maxQueue.peek();
+//=> Item { priority: 8, value: 'E' },
+
+maxQueue;
+//=> Queue { queue: [
+// Item { priority: 8, value: 'E' },
+// Item { priority: 7, value: 'D' },
+// Item { priority: 5, value: 'C' },
+// Item { priority: 2, value: 'F' } ] }
+
+maxQueue.values();
+//=> [ 'E', 'D', 'C', 'F' ]
+
+maxQueue.toPairs();
+//=> [ [ 8, 'E' ], [ 7, 'D' ], [ 5, 'C' ], [ 2, 'F' ] ]
+```
 
 ## Development
 
