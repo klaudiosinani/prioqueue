@@ -14,7 +14,7 @@ declare namespace queue {
   interface Item<T> extends item.Instance<T> {}
 
   export interface Constructor {
-    new <T = any>(): Instance<T>;
+    new <T = any>(comparatorFn: (x: Item<T>, y: Item<T>) => number): Instance<T>;
   }
 
   export interface Instance<T> {
