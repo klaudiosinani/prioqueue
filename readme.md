@@ -401,6 +401,55 @@ queue.enqueue(15, 'A').enqueue(10, 'B').enqueue(5, 'C').enqueue(8, 'D');
 //=> [ 'A', 'B', 'C', 'D' ]
 ```
 
+Also available, along with the `Queue` exposed class, is the `Item` class, mainly useful for testing purposes, since it can be utilized to compare queue items. The class has a priority constructor method, with a `priority` and a `value` parameter, corresponding to the priority and the value stored in the created instance, respectively.
+
+#### item.`priority`
+
+- Return Type: `Number`
+
+The `priority` corresponding to the item instance.
+
+```js
+const {Item} = require('prioqueue');
+
+const item = new Item(10, 'A');
+// => Item { priority:10, value: 'A' }
+item.priority;
+//=> 10
+```
+
+#### item.`value`
+
+- Return Type: `Any`
+
+The value that the item contains.
+
+```js
+const {Item} = require('prioqueue');
+
+const item = new Item(10, 'A');
+// => Item { priority: 10, value: 'A' }
+item.value;
+//=> 'A'
+item.value = 'B'
+// => Item { priority: 10, value: 'B' }
+```
+
+#### item.`toPair()`
+
+- Return Type: `[Number, Any]`
+
+Returns an ordered-pair/2-tuple, where the first element is a number corresponding to the `priority` of the item, and the last one is a value, that can be of any type, corresponding to the `value` stored in the item.
+
+```js
+const {Item} = require('prioqueue');
+
+const item = new Item(5, 'B');
+
+item.toPair();
+//=> [ 5, 'B' ]
+```
+
 ## Development
 
 For more info on how to contribute to the project, please read the [contributing guidelines](https://github.com/klaussinani/prioqueue/blob/master/contributing.md).
