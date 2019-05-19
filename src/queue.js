@@ -58,10 +58,6 @@ class Queue {
     return indices;
   }
 
-  _getChildren(i) {
-    return this._getChildIndices(i).map(x => this._queue[x]);
-  }
-
   _getLeftChildIndex(i) {
     return (2 * i) + 1;
   }
