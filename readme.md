@@ -17,7 +17,7 @@
 
 ## Description
 
-ES6 implementation of the priority queue queue structures with TypeScript support.
+ES6 implementation of the priority queue data structures with TypeScript support.
 
 Come over to [Twitter](https://twitter.com/klaussinani) to share your thoughts on the project.
 
@@ -49,7 +49,7 @@ npm install prioqueue
 
 ## In Depth
 
-A priority queue is an abstract queue type, similar to a regular queue or stack queue structure, but where additionally each item has a `priority` associated with it. In a priority queue, an item with high priority is served before an item with low priority. To improve performance, Prioqueue priority queues use an array implemented binary heap as their backbone, giving `O(log n)` performance for inserts and removals.
+A priority queue is an abstract queue type, similar to a regular queue or stack data structure, but where additionally each item has a `priority` associated with it. In a priority queue, an item with high priority is served before an item with low priority. To improve performance, Prioqueue priority queues use an array implemented binary heap as their backbone, giving `O(log n)` performance for inserts and removals.
 
 ## Usage
 
