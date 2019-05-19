@@ -135,6 +135,272 @@ maxQueue.toPairs();
 //=> [ [ 8, 'E' ], [ 7, 'D' ], [ 5, 'C' ], [ 2, 'F' ] ]
 ```
 
+## API
+
+The following documentation holds for both max & min priority queues. The below described `queue` instance is used to depict the same methods that are available to both a min and a max priority queue, without overlooking their above described differences and unique qualities.
+
+#### queue.`size`
+
+- Return Type: `Number`
+
+Returns the total number of items residing in the queue.
+
+```js
+queue.enqueue(15, 'A').enqueue(10, 'B').enqueue(5, 'C');
+queue.size;
+// => 3
+```
+
+#### queue.`clear()`
+
+- Return Type: `Queue`
+
+Mutates the queue by removing all residing items and returns it empty.
+
+```js
+queue.enqueue(15, 'A').enqueue(10, 'B').enqueue(5, 'C');
+//=> Queue { queue: [
+// Item { priority: 15, value: 'A' },
+// Item { priority: 10, value: 'B' },
+// Item { priority: 5, value: 'C' } ] }
+queue.size;
+//=> 3
+queue.clear();
+//=> Queue { queue: [] } }
+queue.size;
+//=> 0
+```
+
+#### queue.`dequeue()`
+
+- Return Type: `Item | undefined`
+
+Mutates the queue by removing the front/highest-priority item which is also returned. If the queue is empty then `undefined` is returned.
+
+```js
+queue.enqueue(15, 'A').enqueue(10, 'B').enqueue(5, 'C').enqueue(8, 'D');
+queue.dequeue();
+// => Item { priority: 15, value: 'A' }
+queue.dequeue();
+// => Item { priority: 10, value: 'B' }
+queue.dequeue();
+// => Item { priority: 8, value: 'D' }
+queue.dequeue();
+// => Item { priority: 5, value: 'C' }
+queue.dequeue();
+// => undefined
+queue.size;
+//=> 0
+```
+
+#### queue.`enqueue(priority, value)`
+
+- Return Type: `Queue`
+
+Mutates the queue by inserting a new item and returns the queue itself.
+
+##### **`priority`**
+
+- Type: `Number`
+
+Can be any number that will correspond to the `priority` of the created item. 
+
+##### **`value`**
+
+- Type: `Any`
+
+Can be any value that will stored in the new item.
+
+```js
+queue.enqueue(15, 'A');
+//=> Queue { queue: [ Item { priority: 15, value: 'A' } ] }
+queue.enqueue(10, 'B').enqueue(5, 'C');
+//=> Queue { queue: [ 
+// Item { priority: 15, value: 'A' },
+// Item { priority: 10, value: 'B' },
+// Item { priority: 5, value: 'C' } ] }
+queue.size;
+//=> 3
+```
+
+#### queue.`forEach(fn)`
+
+- Return Type: `Queue`
+
+Applies level order traversal (breadth-first traversal) to the binary heap, used internally for implementing the queue, and executes the provided `fn` function on each traversed item without mutating the queue. Returns the queue itself at the end of the traversal.
+
+##### **`fn`**
+
+- Type: `Function`
+
+Unary function to execute on each item.
+
+```js
+queue.enqueue(15, 'A').enqueue(10, 'B').enqueue(5, 'C').enqueue(8, 'D');
+//=> Queue { queue: [
+// Item { priority: 15, value: 'A' },
+// Item { priority: 10, value: 'B' },
+// Item { priority: 5, value: 'C' },}
+// Item { priority: 8, value: 'D' } } ]
+queue.forEach(item => console.log(item.priority));
+//=> 15
+//=> 10
+//=> 5
+//=> 8
+```
+
+#### queue.`includes(value)`
+
+- Return Type: `Boolean`
+
+Determines whether the queue includes a item with a certain `value`, returning `true` or `false` as appropriate.
+
+##### **`value`**
+
+- Type: `Any`
+
+Item `value` to search for.
+
+```js
+queue.enqueue(15, 'A').enqueue(10, 'B').enqueue(5, 'C');
+queue.includes('A');
+// => true
+queue.includes('D');
+// => false
+queue.includes('C');
+// => true
+```
+
+#### queue.`isEmpty()`
+
+- Return Type: `Boolean`
+
+Determines whether the queue is empty, returning `true` or `false` as appropriate.
+
+```js
+queue.enqueue(10, 'A');
+queue.isEmpty();
+//=> false
+queue.clear().isEmpty();
+//=> true
+```
+
+#### queue.`peek()`
+
+- Return Type: `Item | undefined`
+
+Returns the front/highest-priority item of the queue.
+If the queue is empty `undefined` is returned.
+
+```js
+queue.enqueue(10, 'A');
+queue.peek();
+// => Item { priority: 10, value: 'A' }
+```
+
+#### queue.`peekPriority()`
+
+- Return Type: `Number | undefined`
+
+Returns the priority of the front/highest-priority item of the queue.
+If the queue is empty `undefined` is returned.
+
+```js
+queue.enqueue(10, 'A');
+queue.peekPriority();
+// => 10
+```
+
+#### queue.`peekValue()`
+
+- Return Type: `Any | undefined`
+
+Returns the value of the front/highest-priority item of the queue.
+If the queue is empty `undefined` is returned.
+
+```js
+queue.enqueue(10, 'A');
+queue.peekValue();
+// => 'A'
+```
+
+#### queue.`priorities()`
+
+- Return Type: `Array<Number>`
+
+Applies level order traversal (breadth-first traversal) to the binary heap, used internally for implementing the queue, and stores the `priority` of each traversed item in an array.
+The array is returned at the end of the traversal.
+
+```js
+queue.enqueue(15, 'A').enqueue(10, 'B').enqueue(5, 'C').enqueue(8, 'D');
+//=> [ 15, 10, 5, 8 ]
+```
+
+#### queue.`search(value)`
+
+- Return Type: `Item | undefined`
+
+Determines whether the queue includes a item with a certain `value`, returning the targeted item or `undefined` as appropriate.
+
+##### **`value`**
+
+- Type: `Any`
+
+Item `value` to search for.
+
+```js
+queue.enqueue(15, 'A').enqueue(10, 'B').enqueue(5, 'C').enqueue(8, 'D');
+queue.search(10);
+// => Item { priority: 10, value: 'B' }
+queue.search(5);
+// => Item { priority: 5, value: 'C' }
+queue.search(25);
+// => undefined
+```
+
+#### queue.`toArray()`
+
+- Return Type: `Array<Item>`
+
+Applies level order traversal (breadth-first traversal) to the binary heap, used internally for implementing the queue, and stores each traversed item in an array.
+The array is returned at the end of the traversal.
+
+```js
+queue.enqueue(15, 'A').enqueue(10, 'B').enqueue(5, 'C').enqueue(8, 'D');
+queue.toArray();
+//=> [ 
+//  Item { priority: 15, value: 'A' },
+//  Item { priority: 10, value: 'B' },
+//  Item { priority: 5, value: 'C' },
+//  Item { priority: 8, value: 'D' }
+// ]
+```
+
+#### queue.`toPairs()`
+
+- Return Type: `Array<[Number, Any]>`
+
+Applies level order traversal (breadth-first traversal) to the binary heap, used internally for implementing the queue, and for each traversed item stores in an array an ordered-pair/2-tuple, where the first element is a `number` corresponding to the `priority` of the traversed item, and the last one is a value of type `any`, corresponding to the `value` stored in the traversed item.
+The array is returned at the end of the traversal.
+
+```js
+queue.enqueue(15, 'A').enqueue(10, 'B').enqueue(5, 'C').enqueue(8, 'D');
+queue.toPairs();
+//=> [ [ 15, 'A' ], [ 10, 'B' ], [ 5, 'C' ], [ 8, 'D' ] ]
+```
+
+#### queue.`value()`
+
+- Return Type: `Array<Any>`
+
+Applies level order traversal (breadth-first traversal) to the binary heap, used internally for implementing the queue, and stores the `value` of each traversed item in an array.
+The array is returned at the end of the traversal.
+
+```js
+queue.enqueue(15, 'A').enqueue(10, 'B').enqueue(5, 'C').enqueue(8, 'D');
+//=> [ 'A', 'B', 'C', 'D' ]
+```
+
 ## Development
 
 For more info on how to contribute to the project, please read the [contributing guidelines](https://github.com/klaussinani/prioqueue/blob/master/contributing.md).
