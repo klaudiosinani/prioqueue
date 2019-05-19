@@ -49,19 +49,19 @@ npm install prioqueue
 
 ## In Depth
 
-A priority queue is an abstract queue type, similar to a regular queue or stack queue structure, but where additionally each item has a `priority` associated with it. In a priority queue, an item with high priority is served before an item with low priority. To improve performance, Prioqueue priority queues use an array implemented binary heap as their backbone, giving `O(log n)` performance for enqueues and removals.
+A priority queue is an abstract queue type, similar to a regular queue or stack queue structure, but where additionally each item has a `priority` associated with it. In a priority queue, an item with high priority is served before an item with low priority. To improve performance, Prioqueue priority queues use an array implemented binary heap as their backbone, giving `O(log n)` performance for inserts and removals.
 
 ## Usage
 
 Prioqueue exposes a chainable API, that can be utilized through a simple and minimal syntax, allowing you to combine methods effectively.
 
-To create a **max-priority queue**, where items are enqueueed in the order in which they arrive and the item with the maximum priority value is always served first, we provide as argument to the `Queue` class, on instantiation, a binary comparator function `compareMax(x, y)`, which returns a positive number when the priority of item `x` is greater than the one of item `y`, zero when equal and a negative number when less than.
+To create a **max-priority queue**, where items are inserted  in the order in which they arrive and the item with the maximum priority value is always served first, we provide as argument to the `Queue` class, on instantiation, a binary comparator function `compareMax(x, y)`, which returns a positive number when the priority of item `x` is greater than the one of item `y`, zero when equal and a negative number when less than.
 
-Accordingly, to create a **min-priority queue**, where items are enqueueed in the order in which they arrive and the item with the minimum priority value is always served first, a binary comparator function `compareMin(x, y)` must be passed as argument, which returns a positive number when the priority of item `x` is less than the one of item `y`, zero when equal and a negative number when greater than.
+Accordingly, to create a **min-priority queue**, where items are inserted in the order in which they arrive and the item with the minimum priority value is always served first, a binary comparator function `compareMin(x, y)` must be passed as argument, which returns a positive number when the priority of item `x` is less than the one of item `y`, zero when equal and a negative number when greater than.
 
 By default, if no comparator function is provided on instantiation, a **max-priority queue** instance is returned.
 
-Usage examples can be also found at the [`test`](https://github.com/klaussinani/prioqueue/heap/master/test) directory.
+Usage examples can be also found at the [`test`](https://github.com/klaussinani/prioqueue/master/test) directory.
 
 ```js
 'use strict';
