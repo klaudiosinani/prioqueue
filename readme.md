@@ -137,7 +137,7 @@ maxQueue.toPairs();
 
 ## API
 
-The following documentation holds for both max & min priority queues. The below described `queue` instance is used to depict the same methods that are available to both a min and a max priority queue, without overlooking their above described differences and unique qualities.
+The following documentation holds for both min & max priority queues. The below described `queue` instance is used to depict the same methods that are available to both a min and a max priority queue, without overlooking their above described differences and unique qualities.
 
 #### queue.`size`
 
@@ -289,7 +289,7 @@ queue.clear().isEmpty();
 
 - Return Type: `Item | undefined`
 
-Returns the front/highest-priority item of the queue.
+Returns the front/highest-priority item of the queue without removing it.
 If the queue is empty `undefined` is returned.
 
 ```js
