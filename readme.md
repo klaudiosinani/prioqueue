@@ -17,7 +17,7 @@
 
 ## Description
 
-ES6 implementation of the priority queue data structures with TypeScript support.
+ES6 implementation of the priority queue data structure with TypeScript support.
 
 Come over to [Twitter](https://twitter.com/klaussinani) to share your thoughts on the project.
 
