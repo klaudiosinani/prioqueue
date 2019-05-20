@@ -340,7 +340,7 @@ queue.enqueue(15, 'A').enqueue(10, 'B').enqueue(5, 'C').enqueue(8, 'D');
 
 - Return Type: `Item | undefined`
 
-Determines whether the queue includes a item with a certain `value`, returning the targeted item or `undefined` as appropriate.
+Determines whether the queue includes an item with a certain `value`, returning the targeted item or `undefined` as appropriate.
 
 ##### **`value`**
 
@@ -401,7 +401,7 @@ queue.enqueue(15, 'A').enqueue(10, 'B').enqueue(5, 'C').enqueue(8, 'D');
 //=> [ 'A', 'B', 'C', 'D' ]
 ```
 
-Also available, along with the `Queue` exposed class, is the `Item` class, mainly useful for testing purposes, since it can be utilized to compare queue items. The class has a priority constructor method, with a `priority` and a `value` parameter, corresponding to the priority and the value stored in the created instance, respectively.
+Also available, along with the `Queue` exposed class, is the `Item` class, mainly useful for testing purposes, since it can be utilized to compare queue items. The class has a binary constructor method, with a `priority` and a `value` parameter, corresponding to the priority and the value stored in the created instance, respectively.
 
 #### item.`priority`
 
