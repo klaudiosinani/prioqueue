@@ -3,7 +3,7 @@
 </h1>
 
 <h4 align="center">
-  ⚡ Priority queues for ES6
+  Priority queues for ES6
 </h4>
 
 <p align="center">
