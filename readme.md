@@ -465,7 +465,7 @@ For more info on how to contribute to the project, please read the [contributing
 - [binstree](https://github.com/klaussinani/binstree) - Binary search trees for ES6
 - [doublie](https://github.com/klaussinani/doublie) - Doubly circular & linear linked lists for ES6
 - [mheap](https://github.com/klaussinani/mheap) - Binary min & max heaps for ES6
-- [shtack](https://github.com/klaussinani/shtack) - Stacks for ES6
+- [shtack](https://github.com/klaussinani/shtack) - LIFO Stacks for ES6
 - [singlie](https://github.com/klaussinani/singlie) - Singly circular & linear linked lists for ES6
 
 ## Team
