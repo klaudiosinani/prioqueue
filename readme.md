@@ -19,8 +19,6 @@
 
 ES6 implementation of the priority queue data structure with TypeScript support.
 
-Come over to [Twitter](https://twitter.com/klaussinani) to share your thoughts on the project.
-
 Visit the [contributing guidelines](https://github.com/klaussinani/prioqueue/blob/master/contributing.md#translating-documentation) to learn more on how to translate this document into more languages.
 
 ## Contents
