@@ -1,6 +1,6 @@
 declare namespace item {
   export interface Constructor {
-    new <T = any>(priority: number, value: T): Instance<T>;
+    new <T = unknown>(priority: number, value: T): Instance<T>;
   }
 
   export interface Instance<T> {
@@ -14,7 +14,7 @@ declare namespace queue {
   interface Item<T> extends item.Instance<T> {}
 
   export interface Constructor {
-    new <T = any>(comparatorFn: (x: Item<T>, y: Item<T>) => number): Instance<T>;
+    new <T = unknown>(comparatorFn: (x: Item<T>, y: Item<T>) => number): Instance<T>;
   }
 
   export interface Instance<T> {
@@ -37,8 +37,8 @@ declare namespace queue {
 }
 
 declare namespace prioqueue {
-  export interface Item<T = any> extends item.Instance<T> {}
-  export interface Queue<T = any> extends queue.Instance<T> {}
+  export interface Item<T = unknown> extends item.Instance<T> {}
+  export interface Queue<T = unknown> extends queue.Instance<T> {}
 }
 
 declare const prioqueue: {
